@@ -542,8 +542,10 @@ Add your photo to `assets/img/profile.jpg`
 #### GitHub Pages (Free)
 1. Push code to GitHub
 2. Go to repository Settings → Pages
-3. Source: "Deploy from a branch" → "main"
-4. Your site: `https://yourusername.github.io/repository-name`
+3. Under Build and deployment select Source: "GitHub Actions"
+4. Click on Configure for GitHub Pages Jekyll
+5. Press on Commit changes on both windows
+6. Visit your your site once deployment is completed: `https://yourusername.github.io/repository-name`
 
 ## 🔧 Maintenance & Advanced
 
