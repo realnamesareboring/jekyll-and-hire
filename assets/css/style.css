@@ -1594,3 +1594,122 @@
 .project-title-link:hover {
     cursor: pointer;
 }
+/* Add this to your assets/css/style.css - Experience Bullet Points Styling */
+
+/* Experience bullet points styling */
+.experience-bullets {
+    margin: 1rem 0 0 0;
+    padding-left: 1.5rem;
+    list-style: none;
+    position: relative;
+}
+
+.experience-bullets li {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 0.8rem;
+    position: relative;
+    padding-left: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+/* Custom cyber-themed bullet points */
+.experience-bullets li::before {
+    content: '▶';
+    color: var(--primary-cyber);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect for bullet points */
+.experience-bullets li:hover {
+    color: var(--text-primary);
+    transform: translateX(5px);
+}
+
+.experience-bullets li:hover::before {
+    color: var(--cyber-blue);
+    text-shadow: 0 0 8px var(--cyber-blue);
+}
+
+/* Alternative bullet styles - uncomment one you prefer */
+
+/* Option 1: Terminal-style bullets */
+/*
+.experience-bullets li::before {
+    content: '> ';
+    color: var(--terminal-green);
+}
+*/
+
+/* Option 2: Hexagon bullets */
+/*
+.experience-bullets li::before {
+    content: '⬢';
+    color: var(--primary-cyber);
+}
+*/
+
+/* Option 3: Circuit-style bullets */
+/*
+.experience-bullets li::before {
+    content: '◈';
+    color: var(--cyber-blue);
+}
+*/
+
+/* Light theme support */
+[data-theme="light"] .experience-bullets li::before {
+    color: #6366f1;
+}
+
+[data-theme="light"] .experience-bullets li:hover::before {
+    color: #8b5cf6;
+    text-shadow: 0 0 8px rgba(139, 92, 246, 0.4);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .experience-bullets {
+        padding-left: 1rem;
+    }
+    
+    .experience-bullets li {
+        padding-left: 1.2rem;
+        margin-bottom: 0.6rem;
+    }
+    
+    .experience-bullets li::before {
+        font-size: 0.7rem;
+    }
+}
+.experience-bullets {
+    margin: 1rem 0 0 0;
+    padding-left: 1.5rem;
+    list-style: none;
+    position: relative;
+}
+
+.experience-bullets li {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 0.8rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.experience-bullets li::before {
+    content: '▶';
+    color: var(--primary-cyber);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+}

@@ -40,6 +40,8 @@ layout: default
     </div>
 </section>
 
+<!-- Replace the Resume Section in your index.html with this updated version -->
+
 <!-- Resume Section -->
 <section id="resume" class="section">
     <h2 class="section-title">Resume</h2>
@@ -51,10 +53,22 @@ layout: default
                 <h4>{{ job.title }}</h4>
                 <div class="company">{{ job.company }}</div>
                 <div class="date">{{ job.period }}</div>
-                <p>{{ job.description }}</p>
+                
+                {% if job.description.first %}
+                    <!-- If description is an array (multiple bullet points) -->
+                    <ul class="experience-bullets">
+                        {% for bullet in job.description %}
+                        <li>{{ bullet }}</li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <!-- If description is a single string (backward compatibility) -->
+                    <p>{{ job.description }}</p>
+                {% endif %}
             </div>
             {% endfor %}
         </div>
+        
         <div class="resume-column">
             <h3>Education</h3>
             {% for edu in site.data.portfolio.education %}
@@ -62,7 +76,17 @@ layout: default
                 <h4>{{ edu.degree }}</h4>
                 <div class="company">{{ edu.institution }}</div>
                 <div class="date">{{ edu.period }}</div>
-                <p>{{ edu.description }}</p>
+                
+                {% if edu.description.first %}
+                    <!-- Support bullet points for education too -->
+                    <ul class="experience-bullets">
+                        {% for bullet in edu.description %}
+                        <li>{{ bullet }}</li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>{{ edu.description }}</p>
+                {% endif %}
             </div>
             {% endfor %}
             
